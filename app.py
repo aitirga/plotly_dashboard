@@ -1,10 +1,8 @@
 import pandas as pd
 import dash
-import dash_daq as daq
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State, ClientsideFunction
-import plotly.graph_objs as go
 import plotly.express as px
 
 validation_df = pd.read_csv("./data/rnn_validation.csv")
@@ -66,4 +64,4 @@ def update_figure(value):
 
 
 if __name__ == '__main__':
-    app.run_server(host="0.0.0.0", debug=True)
+    app.run_server(host="0.0.0.0")
