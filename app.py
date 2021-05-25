@@ -4,6 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State, ClientsideFunction
 import plotly.express as px
+import os
 
 validation_df = pd.read_csv("./data/rnn_validation.csv")
 app = dash.Dash(
@@ -64,4 +65,6 @@ def update_figure(value):
 
 
 if __name__ == '__main__':
-    app.run_server(host="0.0.0.0")
+    port = int(os.environ.get('PORT', 5000))
+    app.run_server(host="0.0.0.0", port=port)
+
